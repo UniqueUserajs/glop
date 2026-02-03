@@ -1,7 +1,7 @@
 package sprite_test
 
 import (
-  "github.com/MobRulesGames/glop/sprite"
+  "github.com/UniqueUserajs/glop/sprite"
   . "github.com/orfjackal/gospec/src/gospec"
   "github.com/orfjackal/gospec/src/gospec"
 )

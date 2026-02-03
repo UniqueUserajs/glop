@@ -1,7 +1,7 @@
 package system
 
 import (
-  "github.com/MobRulesGames/glop/gin"
+  "github.com/UniqueUserajs/glop/gin"
 )
 
 type System interface {

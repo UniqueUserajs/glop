@@ -9,8 +9,8 @@ import (
   "sort"
   "strconv"
   "strings"
-  "github.com/MobRulesGames/glop/util/algorithm"
-  "github.com/MobRulesGames/yedparse"
+  "github.com/UniqueUserajs/glop/util/algorithm"
+  "github.com/UniqueUserajs/yedparse"
 )
 
 type sharedSprite struct {

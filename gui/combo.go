@@ -1,7 +1,7 @@
 package gui
 
 import (
-  "github.com/MobRulesGames/glop/gin"
+  "github.com/UniqueUserajs/glop/gin"
 )
 
 type ComboBox struct {

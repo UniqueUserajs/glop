@@ -8,8 +8,8 @@ import (
   "image/color"
   "code.google.com/p/freetype-go/freetype"
   "code.google.com/p/freetype-go/freetype/truetype"
-  "github.com/MobRulesGames/opengl/gl"
-  "github.com/MobRulesGames/opengl/glu"
+  "github.com/UniqueUserajs/opengl/gl"
+  "github.com/UniqueUserajs/opengl/glu"
   "io/ioutil"
 )
 

@@ -3,7 +3,7 @@ package gin_test
 import (
   . "github.com/orfjackal/gospec/src/gospec"
   "github.com/orfjackal/gospec/src/gospec"
-  "github.com/MobRulesGames/glop/gin"
+  "github.com/UniqueUserajs/glop/gin"
   "strings"
 )
 

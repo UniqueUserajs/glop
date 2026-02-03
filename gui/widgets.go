@@ -5,8 +5,8 @@ import (
   _ "image/png"
   _ "image/jpeg"
   "os"
-  "github.com/MobRulesGames/opengl/gl"
-  "github.com/MobRulesGames/opengl/glu"
+  "github.com/UniqueUserajs/opengl/gl"
+  "github.com/UniqueUserajs/opengl/glu"
   "runtime"
 )
 

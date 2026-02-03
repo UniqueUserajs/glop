@@ -1,8 +1,8 @@
 package gui
 
 import (
-  "github.com/MobRulesGames/glop/gin"
-  "github.com/MobRulesGames/opengl/gl"
+  "github.com/UniqueUserajs/glop/gin"
+  "github.com/UniqueUserajs/opengl/gl"
   "reflect"
 )
 
