@@ -1,0 +1,10 @@
+github.com/UniqueUserajs/polish v0.0.0-20120524023733-9d9a1194cd81 h1:Iw9Mkh2rkQfRDWs+aXMS/a26J9hs+e8LcpHSsrr4PEo=
+github.com/UniqueUserajs/polish v0.0.0-20120524023733-9d9a1194cd81/go.mod h1:kAAmwc4pKph0vdLE5ZP6Ni0e5R2539CS8vLnCki+KFs=
+github.com/UniqueUserajs/yedparse v0.0.0-20260203214822-0f99d6d162aa h1:+6gcRKhVrnqQ7M5/LtiDc9gBD+ESM5Sj0L/hXqdyY9I=
+github.com/UniqueUserajs/yedparse v0.0.0-20260203214822-0f99d6d162aa/go.mod h1:Edoc0y3D5iiCz1jGRH5i+Piw6RBFY3EONsBGHPJ1qDg=
+github.com/orfjackal/gospec v0.0.0-20140731185859-a21081619255 h1:ijtHD/28+EHo0NH8Ev8Y1TGiZdyLKbDaT4Jo9p0IufM=
+github.com/orfjackal/gospec v0.0.0-20140731185859-a21081619255/go.mod h1:s9jdgxV9J9CqMIKkedEWkAI6u7WsfJRXokgrzVfK39Q=
+github.com/orfjackal/nanospec.go v0.0.0-20120727230329-de4694c1d701 h1:yOXfzNV7qkZ3nf2NPqy4BMzlCmnQzIEbI1vuqKb2FkQ=
+github.com/orfjackal/nanospec.go v0.0.0-20120727230329-de4694c1d701/go.mod h1:VtBIF1XX0c1nKkeAPk8i4aXkYopqQgfDqolHUIHPwNI=
+github.com/runningwild/polish v0.0.0-20120524023733-9d9a1194cd81 h1:FTAg+lBCy0v6vvGaykBPATDdUY50MjJ6FdQ9CQeQsAc=
+github.com/runningwild/polish v0.0.0-20120524023733-9d9a1194cd81/go.mod h1:BjqYe08obgSdkjNk2t3EpfJq4ITaQ27tAJoOxv0KXq0=
