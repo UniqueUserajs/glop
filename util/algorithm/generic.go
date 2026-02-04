@@ -11,7 +11,7 @@ type Chooser func(interface{}) bool
 // // slice that contains only those elements of the input slice for which
 // // choose() returns true.  The elements of the returned slice will be in the
 // // same order that they were in in the input slice.
-func Choose(_a interface{}, chooser interface{}) {
+func Choose(_a interface{}, chooser interface{}) interface{} {
   a := reflect.ValueOf(_a)
   if a.Kind() != reflect.Ptr || a.Elem().Kind() != reflect.Slice {
     panic(fmt.Sprintf("Can only Choose from a pointer to a slice, not a %v", a))
@@ -47,6 +47,7 @@ func Choose(_a interface{}, chooser interface{}) {
     }
   }
   slice.Set(slice.Slice(0, slice.Len()-count))
+  return slice
 }
 
 type Mapper func(a interface{}) interface{}

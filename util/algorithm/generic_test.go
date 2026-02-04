@@ -4,7 +4,6 @@ import (
   . "github.com/orfjackal/gospec/src/gospec"
   "github.com/orfjackal/gospec/src/gospec"
   "github.com/UniqueUserajs/glop/util/algorithm"
-  "fmt"
 )
 
 func ChooserSpec(c gospec.Context) {
@@ -38,6 +37,8 @@ func ChooserSpec(c gospec.Context) {
   })
 }
 
+// Choose2 and Map remove in 90245e6c9bbc54104534f9db4a857b9a64189932
+/*
 func Chooser2Spec(c gospec.Context) {
   c.Specify("Choose on []int", func() {
     a := []int{0,1,2,3,4,5,6,7,8,9}
@@ -84,7 +85,10 @@ func Chooser2Spec(c gospec.Context) {
     c.Expect(b, ContainsInOrder, a)
   })
 }
+*/
 
+// Choose2 and Map remove in 90245e6c9bbc54104534f9db4a857b9a64189932
+/*
 func MapperSpec(c gospec.Context) {
   c.Specify("Map from []int to []float64", func() {
     a := []int{0,1,2,3,4}
@@ -99,6 +103,7 @@ func MapperSpec(c gospec.Context) {
     c.Expect(b, ContainsInOrder, []string{"0", "1", "2", "3", "4"})
   })
 }
+*/
 
 func Mapper2Spec(c gospec.Context) {
   c.Specify("Map from []int to []float64", func() {
