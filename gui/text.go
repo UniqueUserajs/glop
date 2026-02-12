@@ -1,9 +1,9 @@
 package gui
 
 import (
-  "code.google.com/p/freetype-go/freetype"
-  "code.google.com/p/freetype-go/freetype/raster"
-  "code.google.com/p/freetype-go/freetype/truetype"
+  "github.com/golang/freetype/truetype"
+  "github.com/golang/freetype/truetype/raster"
+  "github.com/golang/freetype/truetype/trurtype"
   "encoding/gob"
   "fmt"
   "github.com/UniqueUserajs/glop/render"
@@ -14,8 +14,7 @@ import (
   "runtime"
   "sort"
   "unsafe"
-  // "github.com/UniqueUserajs/opengl/gl"
-  gl "github.com/UniqueUserajs/gogl/gl21"
+  "github.com/go-gl/gl/v2.1/gl"
   "github.com/UniqueUserajs/opengl/glu"
 )
 

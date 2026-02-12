@@ -1,0 +1,6 @@
+github.com/UniqueUserajs/glop v0.0.0-20260204010258-27c4e1f448c4 h1:+z/SpX+/hhNSskP6yHQCMTj05ocz1r0PBbmEPu+roU8=
+github.com/UniqueUserajs/glop v0.0.0-20260204010258-27c4e1f448c4/go.mod h1:JfsX0bqegr0iKUrm/8xF8pWfisLcs14w7FsUF2noUQk=
+github.com/UniqueUserajs/memory v0.0.0-20120626004817-db5bb35fd894 h1:QzNf3qxa3jpdUVOautHWjweS2m8ODNvSHQ1XTjODERU=
+github.com/UniqueUserajs/memory v0.0.0-20120626004817-db5bb35fd894/go.mod h1:Tcbq8J5ShGil1WgHgUdbYo/JgLsk7zMioibhoJXZvuQ=
+github.com/UniqueUserajs/yedparse v0.0.0-20260203214822-0f99d6d162aa h1:+6gcRKhVrnqQ7M5/LtiDc9gBD+ESM5Sj0L/hXqdyY9I=
+github.com/UniqueUserajs/yedparse v0.0.0-20260203214822-0f99d6d162aa/go.mod h1:Edoc0y3D5iiCz1jGRH5i+Piw6RBFY3EONsBGHPJ1qDg=
