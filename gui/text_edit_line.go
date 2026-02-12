@@ -2,7 +2,7 @@ package gui
 
 import (
   "github.com/UniqueUserajs/glop/gin"
-  "code.google.com/p/freetype-go/freetype"
+  "github.com/golang/freetype"
   "github.com/UniqueUserajs/opengl/gl"
 )
 

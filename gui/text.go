@@ -2,8 +2,7 @@ package gui
 
 import (
   "github.com/golang/freetype/truetype"
-  "github.com/golang/freetype/truetype/raster"
-  "github.com/golang/freetype/truetype/trurtype"
+  "github.com/golang/freetype/raster"
   "encoding/gob"
   "fmt"
   "github.com/UniqueUserajs/glop/render"
