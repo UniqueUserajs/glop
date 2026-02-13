@@ -1,8 +1,10 @@
 package gui
 
 import (
+  "github.com/golang/freetype"
+  // "github.com/golang/freetype/raster"
   "github.com/golang/freetype/truetype"
-  "github.com/golang/freetype/raster"
+  "golang.org/x/image/math/fixed"
   "encoding/gob"
   "fmt"
   "github.com/UniqueUserajs/glop/render"
@@ -369,8 +371,8 @@ func (d *Dictionary) RenderString(s string, x, y, z, height float64, just Justif
   if ok {
     gl.PushMatrix()
     defer gl.PopMatrix()
-    gl.Translated(gl.Double(x_pos), gl.Double(y), gl.Double(z))
-    gl.Scaled(gl.Double(scale), gl.Double(scale), 1)
+    gl.Translated(float64(x_pos), float64(y), float64(z))
+    gl.Scaled(float64(scale), float64(scale), 1)
 
     gl.PushAttrib(gl.COLOR_BUFFER_BIT)
     defer gl.PopAttrib()
@@ -378,18 +380,18 @@ func (d *Dictionary) RenderString(s string, x, y, z, height float64, just Justif
     gl.BlendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
 
     gl.Enable(gl.TEXTURE_2D)
-    gl.BindTexture(gl.TEXTURE_2D, gl.Uint(d.texture))
+    gl.BindTexture(gl.TEXTURE_2D, uint32(d.texture))
 
-    gl.BindBuffer(gl.ARRAY_BUFFER, gl.Uint(strbuf.vbuffer))
+    gl.BindBuffer(gl.ARRAY_BUFFER, uint32(strbuf.vbuffer))
 
     gl.EnableClientState(gl.VERTEX_ARRAY)
-    gl.VertexPointer(2, gl.FLOAT, gl.Sizei(size), nil)
+    gl.VertexPointer(2, gl.FLOAT, int32(size), nil)
 
     gl.EnableClientState(gl.TEXTURE_COORD_ARRAY)
-    gl.TexCoordPointer(2, gl.FLOAT, gl.Sizei(size), gl.Pointer(unsafe.Offsetof(strbuf.vs[0].u)))
+    gl.TexCoordPointer(2, gl.FLOAT, int32(size), unsafe.Pointer(unsafe.Offsetof(strbuf.vs[0].u)))
 
-    gl.BindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.Uint(strbuf.ibuffer))
-    gl.DrawElements(gl.TRIANGLES, gl.Sizei(len(strbuf.is)), gl.UNSIGNED_SHORT, nil)
+    gl.BindBuffer(gl.ELEMENT_ARRAY_BUFFER, uint32(strbuf.ibuffer))
+    gl.DrawElements(gl.TRIANGLES, int32(len(strbuf.is)), gl.UNSIGNED_SHORT, nil)
 
     gl.DisableClientState(gl.VERTEX_ARRAY)
     gl.DisableClientState(gl.TEXTURE_COORD_ARRAY)
@@ -435,13 +437,13 @@ func (d *Dictionary) RenderString(s string, x, y, z, height float64, just Justif
     })
     x_pos += float32(info.Advance)
   }
-  gl.GenBuffers(1, (*gl.Uint)(&strbuf.vbuffer))
-  gl.BindBuffer(gl.ARRAY_BUFFER, gl.Uint(strbuf.vbuffer))
-  gl.BufferData(gl.ARRAY_BUFFER, gl.Sizeiptr(int(size)*len(strbuf.vs)), gl.Pointer(&strbuf.vs[0].x), gl.STATIC_DRAW)
+  gl.GenBuffers(1, (*uint32)(&strbuf.vbuffer))
+  gl.BindBuffer(gl.ARRAY_BUFFER, uint32(strbuf.vbuffer))
+  gl.BufferData(gl.ARRAY_BUFFER, int(size)*len(strbuf.vs), unsafe.Pointer(&strbuf.vs[0].x), gl.STATIC_DRAW)
 
-  gl.GenBuffers(1, (*gl.Uint)(&strbuf.ibuffer))
-  gl.BindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.Uint(strbuf.ibuffer))
-  gl.BufferData(gl.ELEMENT_ARRAY_BUFFER, gl.Sizeiptr(int(unsafe.Sizeof(strbuf.is[0]))*len(strbuf.is)), gl.Pointer(&strbuf.is[0]), gl.STATIC_DRAW)
+  gl.GenBuffers(1, (*uint32)(&strbuf.ibuffer))
+  gl.BindBuffer(gl.ELEMENT_ARRAY_BUFFER, uint32(strbuf.ibuffer))
+  gl.BufferData(gl.ELEMENT_ARRAY_BUFFER, int(int(unsafe.Sizeof(strbuf.is[0]))*len(strbuf.is)), unsafe.Pointer(&strbuf.is[0]), gl.STATIC_DRAW)
   d.strs[s] = strbuf
 }
 
@@ -477,7 +479,7 @@ func MakeDictionary(font *truetype.Font, size int) *Dictionary {
     context.SetDst(canvas)
     context.SetClip(canvas.Bounds())
 
-    advance, _ := context.DrawString(string([]rune{r}), raster.Point{})
+    advance, _ := context.DrawString(string([]rune{r}), fixed.Point26_6{})
     sub := minimalSubImage(canvas)
     letters = append(letters, sub)
     rune_mapping[r] = sub
@@ -544,15 +546,15 @@ func (d *Dictionary) setupGlStuff() {
   runtime.SetFinalizer(d, func(d *Dictionary) {
     render.Queue(func() {
       for _, v := range d.dlists {
-        gl.DeleteLists(gl.Uint(v), 1)
+        gl.DeleteLists(uint32(v), 1)
       }
     })
   })
 
   render.Queue(func() {
     gl.Enable(gl.TEXTURE_2D)
-    gl.GenTextures(1, (*gl.Uint)(&d.texture))
-    gl.BindTexture(gl.TEXTURE_2D, gl.Uint(d.texture))
+    gl.GenTextures(1, (*uint32)(&d.texture))
+    gl.BindTexture(gl.TEXTURE_2D, uint32(d.texture))
     gl.TexEnvf(gl.TEXTURE_ENV, gl.TEXTURE_ENV_MODE, gl.MODULATE)
     gl.TexParameterf(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR)
     gl.TexParameterf(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR)

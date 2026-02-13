@@ -6,8 +6,8 @@ import (
   "image"
   "image/draw"
   "image/color"
+  "github.com/golang/freetype"
   "github.com/golang/freetype/truetype"
-  "github.com/golang/freetype/truetype/tryutype"
   "github.com/UniqueUserajs/opengl/gl"
   "github.com/UniqueUserajs/opengl/glu"
   "io/ioutil"
@@ -75,7 +75,7 @@ func drawText(font *truetype.Font, c *freetype.Context, color color.Color, rgba 
   // TODO: wtf - this is all wrong!
   // fix fonts - we can't change the font size easily
   height := 1.3
-  pt := freetype.Pt(0, int(float64(c.PointToFix32(*size)>>8)*height))
+  pt := freetype.Pt(0, int(float64(c.PointToFixed(*size)>>8)*height))
   adv, _ := c.DrawString(text, pt)
   pt.X += adv.X
   py := int(float64(pt.Y>>8)/height + 0.01)
@@ -102,7 +102,7 @@ type TextLine struct {
   rdims     Dims
   font      *truetype.Font
   context   *freetype.Context
-  glyph_buf *truetype.GlyphBuf
+  glyph_buf truetype.GlyphBuf
   texture   gl.Texture
   rgba      *image.RGBA
   color     color.Color
@@ -168,14 +168,19 @@ func MakeTextLine(font_name, text string, width int, r, g, b, a float64) *TextLi
   if !ok {
     panic(fmt.Sprintf("Unable to find a font registered as '%s'.", font_name))
   }
+
+
   w.font = font
-  w.glyph_buf = truetype.NewGlyphBuf()
+  // todo- initialize here?
+  // func (g *GlyphBuf) Load(f *Font, scale fixed.Int26_6, i Index, h font.Hinting) error
+  // w.glyph_buf = truetype.GlyphBuf()
   w.next_text = text
   w.context = freetype.NewContext()
   w.context.SetDPI(132)
   w.context.SetFontSize(12)
   w.SetColor(r, g, b, a)
   w.Request_dims = Dims{width, 35}
+
   return &w
 }
 
