@@ -1,6 +1,14 @@
 github.com/UniqueUserajs/glop v0.0.0-20260204010258-27c4e1f448c4 h1:+z/SpX+/hhNSskP6yHQCMTj05ocz1r0PBbmEPu+roU8=
 github.com/UniqueUserajs/glop v0.0.0-20260204010258-27c4e1f448c4/go.mod h1:JfsX0bqegr0iKUrm/8xF8pWfisLcs14w7FsUF2noUQk=
+github.com/UniqueUserajs/glop/util/algorithm v0.0.0-20260213035812-7b9d4228885f h1:zxCqAdvuUyY/aZZXh+j/lJ80WdnyW3h7bh+8BqbMHxI=
+github.com/UniqueUserajs/glop/util/algorithm v0.0.0-20260213035812-7b9d4228885f/go.mod h1:8UgyzKdfi8ocaugfVBCXbYHez/aoZE+szqT7P3HsXN8=
 github.com/UniqueUserajs/memory v0.0.0-20120626004817-db5bb35fd894 h1:QzNf3qxa3jpdUVOautHWjweS2m8ODNvSHQ1XTjODERU=
 github.com/UniqueUserajs/memory v0.0.0-20120626004817-db5bb35fd894/go.mod h1:Tcbq8J5ShGil1WgHgUdbYo/JgLsk7zMioibhoJXZvuQ=
+github.com/UniqueUserajs/opengl v0.0.0-20260206133808-a5911a7030bb h1:GAEnzlPtw8bjm0f9+9dBSCxT5xNEENYf2r0SL5idwSA=
+github.com/UniqueUserajs/opengl v0.0.0-20260206133808-a5911a7030bb/go.mod h1:GGG1s8UVEELWUSuIOJcJn2ANCmBCfvnqEexyl8c3jks=
 github.com/UniqueUserajs/yedparse v0.0.0-20260203214822-0f99d6d162aa h1:+6gcRKhVrnqQ7M5/LtiDc9gBD+ESM5Sj0L/hXqdyY9I=
 github.com/UniqueUserajs/yedparse v0.0.0-20260203214822-0f99d6d162aa/go.mod h1:Edoc0y3D5iiCz1jGRH5i+Piw6RBFY3EONsBGHPJ1qDg=
+github.com/orfjackal/gospec v0.0.0-20140731185859-a21081619255 h1:ijtHD/28+EHo0NH8Ev8Y1TGiZdyLKbDaT4Jo9p0IufM=
+github.com/orfjackal/gospec v0.0.0-20140731185859-a21081619255/go.mod h1:s9jdgxV9J9CqMIKkedEWkAI6u7WsfJRXokgrzVfK39Q=
+github.com/orfjackal/nanospec.go v0.0.0-20120727230329-de4694c1d701 h1:yOXfzNV7qkZ3nf2NPqy4BMzlCmnQzIEbI1vuqKb2FkQ=
+github.com/orfjackal/nanospec.go v0.0.0-20120727230329-de4694c1d701/go.mod h1:VtBIF1XX0c1nKkeAPk8i4aXkYopqQgfDqolHUIHPwNI=
